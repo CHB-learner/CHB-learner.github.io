@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>个人主页</title>
+  <title>Aleck's Homepage</title>
   <style>
     body {
       font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
@@ -52,15 +52,70 @@
     .section {
       margin-bottom: 2em;
     }
+    .intro {
+      background: #f7fafc;
+      border-radius: 12px;
+      padding: 28px 24px 18px 24px;
+      margin-bottom: 2.2em;
+      box-shadow: 0 2px 12px rgba(44,108,176,0.04);
+      text-align: center;
+    }
+    .intro-list {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 16px 0;
+      font-size: 1.13em;
+    }
+    .intro-list li {
+      margin-bottom: 0.6em;
+      line-height: 1.7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3em;
+    }
+    .intro-list a {
+      color: #2b6cb0;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .intro-list a:hover {
+      color: #205080;
+      text-decoration: underline;
+    }
+    .slogan {
+      margin-top: 12px;
+      color: #4a5568;
+      font-size: 1.05em;
+      font-style: italic;
+      letter-spacing: 0.5px;
+    }
     @media (max-width: 600px) {
       .container { padding: 16px 4px; }
       h1 { font-size: 2em; }
       h2 { font-size: 1.1em; }
     }
+    .wechat-qr {
+      text-align: center;
+      margin-top: 18px;
+      margin-bottom: 0;
+      color: #444;
+      font-size: 1.08em;
+    }
   </style>
 </head>
 <body>
   <div class="container">
+    <div class="intro">
+      <h1 style="font-size:2.1em;margin-bottom:0.2em;">Hi，很高兴遇见你 👋 I’m Aleck~!</h1>
+      <ul class="intro-list">
+        <li>🧡 热爱深度学习、机器人、网络安全、web开发</li>
+        <li>📯 我的哔哩哔哩空间（<a href="https://space.bilibili.com/82123444?spm_id_from=333.337.0.0" target="_blank">Bilibili Video</a>）</li>
+        <li>📚 我的CSDN博客（<a href="https://blog.csdn.net/chb1945626852?type=blog" target="_blank">CSDN Blog</a>）</li>
+        <li>🥤 我的谷歌学术（<a href="https://scholar.google.com/citations?user=2KiDPfQAAAAJ&hl=en" target="_blank">Google Scholar</a>）</li>
+      </ul>
+      <div class="slogan">slogan：学习是一个永无止境的过程，你知道的越多，你不知道的也会越多，在有限的时间内坚持每天多学一点，你一定能成为你想要成为的那个人。不积跬步无以至千里，不积小流无以成江海！</div>
+    </div>
     <h1>Aleck's Homepage</h1>
     <div class="section">
       <h2>教育经历</h2>
@@ -116,6 +171,10 @@
       <h2>联系方式</h2>
       <div style="font-size:1.15em;padding:10px 0 0 2px;">
         邮箱：<a href="mailto:aleck@mail.ustc.edu.cn" style="color:#2b6cb0;text-decoration:none;">aleck@mail.ustc.edu.cn</a>
+      </div>
+      <div class="wechat-qr">
+        <div style="margin-bottom:8px;">欢迎扫码加微信好友</div>
+        <img src="wechat_qr.png" alt="微信二维码" style="width:150px;max-width:60vw;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
       </div>
     </div>
   </div>
