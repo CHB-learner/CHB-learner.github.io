@@ -1,189 +1,145 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aleck's Homepage</title>
+  <title>Haobin Chen (陈浩斌) - Aleck</title>
   <style>
-    body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-      background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+    * {
       margin: 0;
       padding: 0;
-      color: #222;
+      box-sizing: border-box;
     }
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-      padding: 40px 32px 32px 32px;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      line-height: 1.6;
+      color: #333;
     }
     h1 {
-      text-align: center;
-      font-size: 2.6em;
-      margin-bottom: 0.2em;
-      letter-spacing: 2px;
+      font-size: 2em;
+      font-weight: 700;
+      margin-bottom: 10px;
     }
     h2 {
-      color: #2b6cb0;
-      border-left: 5px solid #2b6cb0;
-      padding-left: 12px;
-      margin-top: 2em;
-      margin-bottom: 0.6em;
-      font-size: 1.5em;
+      font-size: 1.3em;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 5px;
     }
-    ul, ol {
-      margin: 0 0 0 1.5em;
-      padding: 0;
+    .contact-links {
+      margin: 15px 0;
     }
-    li {
-      margin-bottom: 0.5em;
-      line-height: 1.7;
-    }
-    .edu {
-      background: #f0f4fa;
-      border-radius: 8px;
-      padding: 18px 24px;
-      margin-bottom: 1.5em;
-      font-size: 1.1em;
-    }
-    .section {
-      margin-bottom: 2em;
-    }
-    .intro {
-      background: #f7fafc;
-      border-radius: 12px;
-      padding: 28px 24px 18px 24px;
-      margin-bottom: 2.2em;
-      box-shadow: 0 2px 12px rgba(44,108,176,0.04);
-      text-align: center;
-    }
-    .intro-list {
-      list-style: none;
-      padding: 0;
-      margin: 18px 0 16px 0;
-      font-size: 1.13em;
-    }
-    .intro-list li {
-      margin-bottom: 0.6em;
-      line-height: 1.7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.3em;
-    }
-    .intro-list a {
-      color: #2b6cb0;
+    .contact-links a {
+      color: #0066cc;
       text-decoration: none;
-      transition: color 0.2s;
+      margin-right: 15px;
     }
-    .intro-list a:hover {
-      color: #205080;
+    .contact-links a:hover {
       text-decoration: underline;
     }
-    .slogan {
-      margin-top: 12px;
-      color: #4a5568;
-      font-size: 1.05em;
-      font-style: italic;
-      letter-spacing: 0.5px;
+    .intro {
+      margin: 20px 0;
     }
-    @media (max-width: 600px) {
-      .container { padding: 16px 4px; }
-      h1 { font-size: 2em; }
-      h2 { font-size: 1.1em; }
+    .intro p {
+      margin-bottom: 8px;
     }
-    .wechat-qr {
-      text-align: center;
-      margin-top: 18px;
-      margin-bottom: 0;
-      color: #444;
-      font-size: 1.08em;
+    .intro a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    .intro a:hover {
+      text-decoration: underline;
+    }
+    .paper-list {
+      list-style: none;
+    }
+    .paper-list li {
+      margin-bottom: 12px;
+    }
+    .paper-list a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    .paper-list a:hover {
+      text-decoration: underline;
+    }
+    .award {
+      color: #e67e22;
+    }
+    .award-list {
+      list-style: none;
+    }
+    .award-list li {
+      margin-bottom: 8px;
+    }
+    .last-updated {
+      margin-top: 50px;
+      color: #888;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="intro">
-      <h1 style="font-size:2.1em;margin-bottom:0.2em;">Hi，很高兴遇见你 👋 I’m Aleck~!</h1>
-      <ul class="intro-list">
-        <li>🧡 热爱深度学习、机器人、网络安全、web开发</li>
-        <li>📯 我的哔哩哔哩空间（<a href="https://space.bilibili.com/82123444?spm_id_from=333.337.0.0" target="_blank">Bilibili Video</a>）</li>
-        <li>📚 我的CSDN博客（<a href="https://blog.csdn.net/chb1945626852?type=blog" target="_blank">CSDN Blog</a>）</li>
-        <li>🥤 我的谷歌学术（<a href="https://scholar.google.com/citations?user=2KiDPfQAAAAJ&hl=en" target="_blank">Google Scholar</a>）</li>
-        <li>❤️ 我的个人主页（<a href="https://github.com/CHB-learner" target="_blank">github</a>）</li>
-      </ul>
-      <div class="slogan">slogan：学习是一个永无止境的过程，你知道的越多，你不知道的也会越多，在有限的时间内坚持每天多学一点，你一定能成为你想要成为的那个人。不积跬步无以至千里，不积小流无以成江海！</div>
-    </div>
-    <h1>Curriculum Vitae</h1>
-    <div class="section">
-      <h2>教育经历</h2>
-      <div class="edu">
-        <div>2021-2025 东华大学 人工智能专业</div>
-        <div>2025-今 中国科学技术大学 电子信息专业</div>
-      </div>
-    </div>
-        <div class="section">
-      <h2>论文</h2>
-      <ul>
-        <li>NeoAtlas and NeoBert: A Database and A Predictive Model for Canonical and Noncanonical Tumor Neoantigens
-Meilong Shi, Qianyi Yan, Wei Zhao, Chuanqi Teng, Fengxian Han, <strong>Haobin Chen</strong>, Yizhuo Li, Lingyun Xu, Fei Yang, Gang Jin, Yiming Bao, Chunman Zuo, Jing Li
-bioRxiv 2025.03.16.643518; doi: https://doi.org/10.1101/2025.03.16.643518
-        
-        li>
-        <li>Chen Y, <strong>Chen H</strong>, Liu S, et al. Research on Information Extraction of LCSTS Dataset Based on an Improved BERTSum-LSTM Model[C]//2024 2nd International Conference on Mechatronics, IoT and Industrial Informatics (ICMIII). IEEE, 2024: 226-231.</li>
-        <li><strong>H. Chen</strong>, J. Tao, B. Zhou and X. Liu, "Research on an Autonomous UAV Search and Rescue System Based on the Improved EGO-Planner Algorithm," 2024 5th International Conference on Computer Engineering and Application (ICCEA), Hangzhou, China, 2024, pp. 1170-1175, doi: 10.1109/ICCEA62105.2024.10604250
-        
-        .li>
-      </ul>
-    </div>
-    <div class="section">
-      <h2>学科竞赛获奖</h2>
-      <ul>
-        <li>2022年 “二十四届中国机器人及人工智能大赛 百度Apollo 城市道路自动驾驶虚拟仿真赛” 国家级二等奖</li>
-        <li>2022年 “2022中国机器人大赛暨RoboCup机器人世界杯中国赛比赛” 国家级二等奖</li>
-        <li>2023年 “第二十五届中国机器人及人工智能大赛 机器人创新赛” 国家级一等奖</li>
-        <li>2023年 “Mathematical Contest In Modeling Certificate of Achievement” H奖</li>
-        <li>2023年 “2023WAIC世界人工智能大会生态赛Amazon DeepRacer” 大学组特等奖冠军</li>
-        <li>2023年 “第十二届‘中国软件杯’大学生软件设计大赛” 国家级三等奖</li>
-        <li>2023年 “第二十五届中国机器人及人工智能大赛 机器人应用赛” 国家级二等奖</li>
-        <li>2023年 “2023睿抗机器人开发者大赛 (RAICOM)” 国家级二等奖</li>
-        <li>2023年 “第五届国际青年人工智能大赛” 国家级一等奖</li>
-        <li>2023年 “2023年全国大学生机器人科技创新交流营暨机器人大赛” 国家级二等奖</li>
-        <li>2023年 “全球校园人工智能算法精英大赛 道路病害目标检测” 国家级一等奖</li>
-        <li>2023年 “全球校园人工智能算法精英大赛 算法创新赛：智能医疗” 国家级二等奖</li>
-        <li>2023年 “2023 年全国大学生嵌入式芯片与系统设计竞赛 FPGA” 国家级三等奖</li>
-        <li>2024年 “正大杯”第十四届全国大学生市场调查与分析大赛 国家级三等奖</li>
-        <li>2024年 睿抗机器人开发者大赛(RAICOM) 四足机器人协同挑战赛 国家级三等奖</li>
-        <li>2024年 睿抗机器人开发者大赛(RAICOM) 算法调优 国家级一等奖</li>
-        <li>2024年 中国国际大学生创新大赛（2024）上海赛区高教主赛道铜奖</li>
-        <li>2025年 抖音AI创变者计划大赛 总决赛三等奖</li>
-      </ul>
-    </div>
-    <div class="section">
-      <h2>专利</h2>
-      <ul>
-        <li>《一种基于无人机的复杂环境搜救方法》</li>
-      </ul>
-    </div>
-    <div class="section">
-      <h2>软件著作权</h2>
-      <ul>
-        <li>《集群搜救自主无人机管理系统V1.0》</li>
-      </ul>
-    </div>
-    <div class="section" style="margin-bottom:0;">
-      <h2>联系方式</h2>
-      <div style="font-size:1.15em;padding:10px 0 0 2px;">
-        邮箱：<a href="mailto:aleck@mail.ustc.edu.cn" style="color:#2b6cb0;text-decoration:none;">aleck@mail.ustc.edu.cn</a>
-      </div>
-      <div class="wechat-qr">
-        <div style="margin-bottom:8px;">WeChat</div>
-        <img src="wechat_qr.png" alt="微信二维码" style="width:150px;max-width:60vw;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
-      </div>
-    </div>
+  <h1 style="font-family: 'Georgia', serif; font-weight: 400; letter-spacing: 1px;">Haobin Chen 陈浩斌</h1>
+  <div class="contact-links">
+    <a href="mailto:aleck@mail.ustc.edu.cn">📧 Email</a> /
+    <a href="https://github.com/CHB-learner">💻 Github</a> /
+    <a href="https://blog.csdn.net/chb1945626852?type=blog">📝 CSDN</a> /
+    <a href="https://scholar.google.com/citations?user=2KiDPfQAAAAJ&hl=en">🎓 Scholar</a> /
+    <a href="https://space.bilibili.com/82123444">📺 Bilibili</a>
   </div>
+
+  <div class="intro">
+    <p>🤖 M.S. student in Electronic Information at <a href="https://www.ustc.edu.cn/">University of Science and Technology of China</a> (2025–present)</p>
+    <p>🎓 B.E. in Artificial Intelligence at <a href="https://www.dhu.edu.cn/">Donghua University</a> (2021–2025)</p>
+    <p style="margin-top: 10px;">🔥 Passionate about LLM, Representation Learning, and RNA Structure Prediction</p>
+    <p style="margin-top: 10px;">📬 Reach me at: <a href="mailto:aleck@mail.ustc.edu.cn">aleck@mail.ustc.edu.cn</a></p>
+  </div>
+
+  <h2>📚 Publications</h2>
+  <ul class="paper-list">
+    <li><a href="https://academic.oup.com/gpb/advance-article/doi/10.1093/gpbjnl/qzaf105/8321956" style="color:#0066cc;text-decoration:none;"><strong>NeoAtlas and NeoBert:</strong> A Database and A Predictive Model for Canonical and Noncanonical Tumor Neoantigens</a><br>
+      <span style="color:#666;">Meilong Shi, Qianyi Yan, Wei Zhao, Chuanqi Teng, Fengxian Han, <strong>Haobin Chen</strong>, et al.</span><br>
+      <span style="color:#888;">Genomics, Proteomics & Bioinformatics (GPB) 2025</span></li>
+    <li><a href="https://ieeexplore.ieee.org/document/10659937/" style="color:#0066cc;text-decoration:none;"><strong>Research on Information Extraction of LCSTS Dataset Based on an Improved BERTSum-LSTM Model</strong></a><br>
+      <span style="color:#666;">Chen Y, <strong>Chen H</strong>, Liu S, et al.</span><br>
+      <span style="color:#888;">2nd International Conference on Mechatronics, IoT and Industrial Informatics (ICMIII 2024)</span></li>
+    <li><a href="https://ieeexplore.ieee.org/document/10604250" style="color:#0066cc;text-decoration:none;"><strong>Research on an Autonomous UAV Search and Rescue System Based on the Improved EGO-Planner Algorithm</strong></a><br>
+      <span style="color:#666;"><strong>Chen H</strong>, J. Tao, B. Zhou and X. Liu</span><br>
+      <span style="color:#888;">5th International Conference on Computer Engineering and Application (ICCEA 2024)</span></li>
+  </ul>
+
+  <h2>🏆 Awards</h2>
+  <ul class="award-list">
+    <li><span class="award">🥇</span> 2025 ByteDance AI Creator Challenge - 3rd Prize (Final)</li>
+    <li><span class="award">🥇</span> 2024 RAICOM - Algorithm Optimization - National 1st Prize</li>
+    <li><span class="award">🥇</span> 2023 China Robot and AI Competition - Innovation - National 1st Prize</li>
+    <li><span class="award">🏆</span> 2023 WAIC Amazon DeepRacer - University Championship</li>
+    <li><span class="award">🥇</span> 2023 Global AI Algorithm Elite Competition - Road Damage Detection - National 1st Prize</li>
+    <li><span class="award">🥇</span> 2023 5th International Youth AI Competition - National 1st Prize</li>
+    <li><span class="award">🥈</span> 2022 China Robot and AI Competition - Baidu Apollo - National 2nd Prize</li>
+    <li><span class="award">🥉</span> 2023 MathorCup Mathematical Contest in Modeling - H Prize</li>
+    <li><span class="award">🥉</span> 2023 China Software Cup - National 3rd Prize</li>
+    <li><span class="award">🥉</span> 2023 National College Embedded Chip & System Design Competition (FPGA) - National 3rd Prize</li>
+    <li><span class="award">🥉</span> 2024 RAICOM - Quadruped Robot - National 3rd Prize</li>
+    <li><span class="award">🥉</span> 2024 China International College Student Innovation Competition - Shanghai Bronze</li>
+  </ul>
+
+  <h2>📄 Patents & Software</h2>
+  <ul>
+    <li>🛩️ "<a href="https://patents.google.com/patent/CN118107822A/zh" style="color:#0066cc;text-decoration:none;">A UAV-based Complex Environment Search and Rescue Method</a>" - Patent</li>
+    <li>💾 "<a href="https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=2KiDPfQAAAAJ&citation_for_view=2KiDPfQAAAAJ:d1gkVwhDpl0C" style="color:#0066cc;text-decoration:none;">Swarm Rescue Autonomous UAV Management System V1.0</a>" - Software Copyright</li>
+  </ul>
+
+  <h2>🔗 Links</h2>
+  <ul>
+    <li><a href="wechat_qr.png" target="_blank">WeChat QR Code</a></li>
+  </ul>
+
+  <p class="last-updated">Last Updated: May 2026</p>
 </body>
-</html> 
+</html>
