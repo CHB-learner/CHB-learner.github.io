@@ -1,145 +1,370 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Haobin Chen (陈浩斌) - Aleck</title>
+  <meta name="description" content="陈浩斌（Haobin Chen）的个人学术主页，包含教育经历、科研经历、论文成果、竞赛奖项与荣誉。">
+  <meta name="theme-color" content="#f7f8fc">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23315fc4'/%3E%3Ctext x='32' y='41' font-size='24' text-anchor='middle' fill='white' font-family='Arial'%3ECH%3C/text%3E%3C/svg%3E">
+  <title>陈浩斌｜Haobin Chen</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --bg: #f7f8fc;
+      --surface: #ffffff;
+      --surface-soft: #f0f4ff;
+      --text: #172033;
+      --muted: #5f6b80;
+      --line: #dfe4ee;
+      --accent: #315fc4;
+      --accent-dark: #21499f;
+      --accent-soft: #e9efff;
+      --success: #18745a;
+      --shadow: 0 16px 42px rgba(35, 52, 84, 0.08);
+      --radius: 18px;
     }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-      max-width: 950px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      line-height: 1.6;
-      color: #333;
+      margin: 0;
+      background: radial-gradient(circle at top left, rgba(74, 113, 205, 0.12), transparent 34rem), var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
     }
+    a { color: var(--accent); text-decoration: none; text-underline-offset: 0.2em; }
+    a:hover { color: var(--accent-dark); text-decoration: underline; }
+    code {
+      padding: 0.08em 0.32em;
+      border-radius: 0.35em;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.92em;
+    }
+    .page { width: min(1080px, calc(100% - 32px)); margin: 0 auto; padding: 38px 0 64px; }
+    .hero {
+      overflow: hidden;
+      position: relative;
+      padding: 46px;
+      border: 1px solid rgba(49, 95, 196, 0.16);
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: var(--shadow);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      top: -120px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(49, 95, 196, 0.2), rgba(61, 162, 137, 0.08));
+      pointer-events: none;
+    }
+    .eyebrow { margin: 0 0 10px; color: var(--accent); font-size: 0.84rem; font-weight: 750; letter-spacing: 0.14em; text-transform: uppercase; }
     h1 {
-      font-size: 2em;
-      font-weight: 700;
-      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", "Songti SC", serif;
+      font-size: clamp(2.25rem, 6vw, 4.35rem);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      line-height: 1.08;
     }
-    h2 {
-      font-size: 1.3em;
-      margin-top: 40px;
-      margin-bottom: 15px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 5px;
+    h1 span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: clamp(1rem, 2.2vw, 1.35rem);
+      font-weight: 500;
+      letter-spacing: 0.06em;
     }
-    .contact-links {
-      margin: 15px 0;
+    .hero-summary { position: relative; z-index: 1; max-width: 780px; margin: 24px 0 0; color: var(--muted); font-size: 1.06rem; }
+    .topic-list, .profile-links, .section-nav { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 0; padding: 0; list-style: none; }
+    .topic-list li { padding: 6px 12px; border: 1px solid #d9e2fb; border-radius: 999px; background: var(--surface-soft); color: var(--accent-dark); font-size: 0.88rem; font-weight: 650; }
+    .profile-links a, .section-nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--surface);
+      color: var(--text);
+      font-size: 0.92rem;
+      font-weight: 650;
     }
-    .contact-links a {
-      color: #0066cc;
-      text-decoration: none;
-      margin-right: 15px;
+    .profile-links a:hover, .section-nav a:hover { border-color: #b8c8ef; color: var(--accent); text-decoration: none; }
+    .section-nav {
+      position: sticky;
+      z-index: 10;
+      top: 12px;
+      justify-content: center;
+      margin-top: 18px;
+      padding: 10px;
+      border: 1px solid rgba(223, 228, 238, 0.9);
+      border-radius: 14px;
+      background: rgba(247, 248, 252, 0.9);
+      box-shadow: 0 8px 24px rgba(35, 52, 84, 0.06);
+      backdrop-filter: blur(14px);
     }
-    .contact-links a:hover {
-      text-decoration: underline;
+    main { display: grid; gap: 22px; margin-top: 24px; }
+    .section {
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 0 8px 30px rgba(35, 52, 84, 0.045);
+      scroll-margin-top: 96px;
     }
-    .intro {
-      margin: 20px 0;
+    .section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+    h2 { margin: 0; font-size: 1.55rem; letter-spacing: -0.02em; }
+    .section-note { margin: 0; color: var(--muted); font-size: 0.9rem; white-space: nowrap; }
+    .timeline, .research-list, .publication-list, .honor-list { display: grid; gap: 18px; }
+    .education-item, .research-item, .publication-item, .ip-item, .honor-item { position: relative; padding: 20px 22px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+    .education-item::before, .research-item::before { content: ""; position: absolute; top: 20px; bottom: 20px; left: -1px; width: 3px; border-radius: 4px; background: linear-gradient(var(--accent), #72a5e8); }
+    .entry-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
+    h3 { margin: 0; font-size: 1.08rem; line-height: 1.5; }
+    .entry-period { flex: 0 0 auto; padding: 3px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-dark); font-size: 0.82rem; font-weight: 700; white-space: nowrap; }
+    .entry-meta { margin: 7px 0 0; color: var(--muted); font-size: 0.94rem; }
+    .research-copy { display: grid; gap: 10px; margin-top: 15px; }
+    .research-copy p, .publication-item p, .ip-item p, .honor-item p { margin: 0; }
+    .label { color: var(--text); font-weight: 750; }
+    .outcome { padding: 10px 12px; border-left: 3px solid #3da289; border-radius: 0 8px 8px 0; background: #edf8f4; color: #244c42; }
+    .publication-item, .ip-item { display: grid; gap: 7px; }
+    .publication-status { color: var(--success); font-size: 0.9rem; font-weight: 700; }
+    .awards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; counter-reset: awards; }
+    .awards li { position: relative; min-height: 116px; padding: 17px 17px 17px 54px; border: 1px solid var(--line); border-radius: 13px; background: #fff; counter-increment: awards; }
+    .awards li::before { content: counter(awards, decimal-leading-zero); position: absolute; top: 18px; left: 16px; color: var(--accent); font-family: Georgia, serif; font-size: 0.84rem; font-weight: 700; }
+    .award-title { display: block; font-weight: 750; line-height: 1.55; }
+    .award-meta { display: block; margin-top: 6px; color: var(--muted); font-size: 0.9rem; }
+    .honor-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .honor-item { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .honor-item time { color: var(--muted); font-size: 0.88rem; white-space: nowrap; }
+    .contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 300px); gap: 28px; align-items: center; }
+    .contact-copy p { margin: 0 0 10px; color: var(--muted); }
+    .qr-card { margin: 0; padding: 14px; border: 1px solid var(--line); border-radius: 15px; background: #fff; text-align: center; }
+    .qr-card img { display: block; width: 100%; height: auto; border-radius: 10px; }
+    .qr-card figcaption { margin-top: 8px; color: var(--muted); font-size: 0.86rem; }
+    footer { padding: 28px 0 0; color: var(--muted); font-size: 0.88rem; text-align: center; }
+    @media (max-width: 760px) {
+      .page { width: min(100% - 20px, 1080px); padding-top: 10px; }
+      .hero, .section { padding: 24px 20px; border-radius: 16px; }
+      .section-nav { position: static; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
+      .section-nav a { white-space: nowrap; }
+      .section-heading, .entry-head { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .section-note { white-space: normal; }
+      .awards, .honor-list, .contact-grid { grid-template-columns: 1fr; }
+      .honor-item { align-items: flex-start; flex-direction: column; gap: 4px; }
+      .qr-card { max-width: 300px; }
     }
-    .intro p {
-      margin-bottom: 8px;
-    }
-    .intro a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-    .intro a:hover {
-      text-decoration: underline;
-    }
-    .paper-list {
-      list-style: none;
-    }
-    .paper-list li {
-      margin-bottom: 12px;
-    }
-    .paper-list a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-    .paper-list a:hover {
-      text-decoration: underline;
-    }
-    .award {
-      color: #e67e22;
-    }
-    .award-list {
-      list-style: none;
-    }
-    .award-list li {
-      margin-bottom: 8px;
-    }
-    .last-updated {
-      margin-top: 50px;
-      color: #888;
-      font-size: 0.9em;
+    @media print {
+      body { background: #fff; }
+      .page { width: 100%; padding: 0; }
+      .hero, .section { box-shadow: none; break-inside: avoid; }
+      .section-nav, .qr-card { display: none; }
+      a { color: inherit; }
     }
   </style>
 </head>
 <body>
-  <h1 style="font-family: 'Georgia', serif; font-weight: 400; letter-spacing: 1px;">Haobin Chen 陈浩斌</h1>
-  <div class="contact-links">
-    <a href="mailto:aleck@mail.ustc.edu.cn">📧 Email</a> /
-    <a href="https://github.com/CHB-learner">💻 Github</a> /
-    <a href="https://blog.csdn.net/chb1945626852?type=blog">📝 CSDN</a> /
-    <a href="https://scholar.google.com/citations?user=2KiDPfQAAAAJ&hl=en">🎓 Scholar</a> /
-    <a href="https://space.bilibili.com/82123444">📺 Bilibili</a>
+  <div class="page">
+    <header class="hero">
+      <p class="eyebrow">Academic Profile</p>
+      <h1>陈浩斌 <span>Haobin Chen</span></h1>
+      <p class="hero-summary">中国科学技术大学电子信息硕士研究生，关注大语言模型、表征学习与 RNA 结构预测，研究经历覆盖医学图像复原、缺失模态分割、RNA 基础模型与三维结构生成。</p>
+      <ul class="topic-list" aria-label="研究方向">
+        <li>大语言模型</li><li>表征学习</li><li>RNA 结构预测</li><li>医学人工智能</li>
+      </ul>
+      <nav class="profile-links" aria-label="个人链接">
+        <a href="mailto:aleck@mail.ustc.edu.cn">邮箱</a>
+        <a href="https://github.com/CHB-learner" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://cv.aleck.xin">个人主页</a>
+        <a href="https://scholar.google.com/citations?user=2KiDPfQAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        <a href="https://blog.csdn.net/chb1945626852?type=blog" target="_blank" rel="noopener noreferrer">CSDN</a>
+        <a href="https://space.bilibili.com/82123444" target="_blank" rel="noopener noreferrer">Bilibili</a>
+      </nav>
+    </header>
+    <nav class="section-nav" aria-label="页面导航">
+      <a href="#education">教育经历</a><a href="#research">科研经历</a><a href="#publications">论文成果</a><a href="#ip">知识产权</a><a href="#awards">竞赛奖项</a><a href="#honors">荣誉与学生工作</a><a href="#contact">联系我</a>
+    </nav>
+    <main>
+      <section class="section" id="education">
+        <div class="section-heading"><h2>教育经历</h2><p class="section-note">Education</p></div>
+        <div class="timeline">
+          <article class="education-item"><div class="entry-head"><div><h3>东华大学(211)</h3><p class="entry-meta">信息与智能科学学院｜专业：人工智能｜导师：刘肖燕</p></div><time class="entry-period">2021.09 - 2025.06</time></div></article>
+          <article class="education-item"><div class="entry-head"><div><h3>中国科学技术大学(985)</h3><p class="entry-meta">生物医学工程学院｜专业：电子信息｜导师：周少华、熊鹏</p></div><time class="entry-period">2025.09 - 至今</time></div></article>
+        </div>
+      </section>
+      <section class="section" id="research">
+        <div class="section-heading"><h2>科研经历</h2><p class="section-note">9 项研究工作</p></div>
+        <div class="research-list">
+          <article class="research-item">
+            <div class="entry-head"><h3><a href="https://ieeexplore.ieee.org/document/10604250/" target="_blank" rel="noopener noreferrer">搜救、巡检、探索一体化无人机集群 ↗</a></h3><time class="entry-period">2023.09 - 2025.04</time></div>
+            <div class="research-copy">
+              <p><span class="label">研究内容：</span>针对复杂环境中无人机难以兼顾避障与人员搜救的问题，本研究提出基于改进 EGO-Planner 的自主搜救系统，采用双向 <code>A*</code> 优化路径，结合 RT-DETR 检测被困人员，并以紧凑型机体完成自主飞行。</p>
+              <p><span class="label">负责内容：</span>作为项目负责人和论文第一作者，负责提出并实现基于改进 EGO-Planner 的自主搜救方案：以双向 <code>A*</code> 替换原始 <code>A*</code> 生成无碰撞初始路径，在保证路径最优性的同时缩短搜索时间；基于 B 样条构建平滑、碰撞与可行性联合代价，采用拟牛顿法和各向异性曲线拟合优化轨迹，并训练 RT-DETR-L 识别受困人员。</p>
+              <p class="outcome"><span class="label">所获成果：</span>以第一作者在 IEEE ICCEA 2024 发表会议论文一篇；主持 2023 年度大学生创新训练计划《搜救、巡检、探索一体化无人机集群》（国家级，项目编号：202310255009）；主持 2024 年度大学生创业实践计划《地空协同智能无人集群系统》（国家级，项目编号：202410255002S）；作为第二发明人参与申请国家发明专利《一种基于无人机的复杂环境搜救方法》（已受理，申请号：202410207396.0）；作为共同著作权人（列第一位）登记计算机软件著作权《无人机自主飞行算法控制系统 V1.0》（登记号：2024SR1718737）。</p>
+            </div>
+          </article>
+          <article class="research-item">
+            <div class="entry-head"><h3><a href="https://ieeexplore.ieee.org/document/10659937/" target="_blank" rel="noopener noreferrer">BERTSum-LSTM：中文新闻抽取式摘要 ↗</a></h3><time class="entry-period">2023.09 - 2024.06</time></div>
+            <div class="research-copy">
+              <p><span class="label">研究内容：</span>针对中文新闻短文本信息密集、关键句难以提取的问题，本研究提出 BERTSum-LSTM 抽取式摘要模型，利用 BERTSum 编码句子语义，通过 LSTM 建模句间上下文，再按重要性分数选择关键句生成摘要。</p>
+              <p><span class="label">负责内容：</span>提出 BERTSum-LSTM 中文抽取式摘要方法：先用 BERTSum 编码句子获得深层语义表示，再引入 LSTM 建模句间顺序依赖，通过线性层与 Softmax 计算句子重要性；针对 LCSTS 缺少抽取式标签的问题，构建基于 ROUGE 最大化的贪心 oracle 标注流程，将生成式摘要转换为句级监督信号。</p>
+              <p class="outcome"><span class="label">所获成果：</span>以第二作者在《IEEE ICMIII 2024》发表会议论文一篇。</p>
+            </div>
+          </article>
+          <article class="research-item">
+            <div class="entry-head"><h3><a href="https://www.biorxiv.org/content/10.1101/2025.08.06.668731v2" target="_blank" rel="noopener noreferrer">structRFM：RNA 基础模型下游评测与泛化分析 ↗</a></h3><time class="entry-period">2025.02 - 2025.08</time></div>
+            <div class="research-copy">
+              <p><span class="label">研究内容：</span>针对 RNA 基础模型偏重序列信息、难以学习碱基配对结构的问题，本研究提出结构引导的 structRFM，通过 MUSES 融合多种结构预测，采用成对掩码联合学习序列与二级结构，并迁移到结构和功能任务。</p>
+              <p><span class="label">负责内容：</span>负责训练集与测试集的 RNA 序列相似性分析：使用 rMSA 和 BLASTN 从 RNAcentral、NT 数据库检索同源序列并生成 MSA，构建两两相似度矩阵，以测试序列对训练集的最大相似度刻画分布差异；参与部分下游结构与功能任务训练，并完成 CASP15、CASP16 数据统计及可视化。</p>
+              <p class="outcome"><span class="label">所获成果：</span>论文《A fully open structure-guided RNA foundation model for robust structural and functional inference》（第四作者）已被《Nature》正式接收。</p>
+            </div>
+          </article>
+          <article class="research-item">
+            <div class="entry-head"><h3><a href="https://academic.oup.com/gpb/advance-article/doi/10.1093/gpbjnl/qzaf105/8321956" target="_blank" rel="noopener noreferrer">NeoBert：经典及非经典肿瘤新抗原–HLA 结合预测 ↗</a></h3><time class="entry-period">2025.03 - 2025.11</time></div>
+            <div class="research-copy">
+              <p><span class="label">研究内容：</span>针对非经典肿瘤新抗原数据分散、结合规律学习不足的问题，本研究提出 NeoAtlas-Tumor 数据库与 NeoBert 模型，汇总免疫肽组数据，联合编码 HLA 与候选肽序列，实现新抗原检索和结合预测。</p>
+              <p><span class="label">负责内容：</span>提出并实现 NeoBert，将 HLA 与肽序列拼接为带 <code>[CLS]</code>/<code>[SEP]</code> 的统一输入，引入氨基酸身份、片段和位置嵌入及 12 层双向 Transformer；随机掩码 15% 氨基酸，联合优化 HLA–肽结合分类与掩码氨基酸预测，使模型同时适配经典与非经典新抗原，并完成与 NetMHCpan-4.1 的对比测试。</p>
+              <p class="outcome"><span class="label">所获成果：</span>以第六作者在《Genomics, Proteomics &amp; Bioinformatics》发表期刊论文一篇。</p>
+            </div>
+          </article>
+          <article class="research-item">
+            <div class="entry-head"><h3><a href="https://arxiv.org/abs/2609.06645" target="_blank" rel="noopener noreferrer">MARR：一体化医学图像复原 ↗</a></h3><time class="entry-period">2026.02 - 2026.09</time></div>
+            <div class="research-copy">
+              <p><span class="label">研究内容：</span>针对单一模型处理 PET 合成、CT 去噪和 MRI 超分辨率时产生任务干扰的问题，本研究提出 MARR 医学图像复原框架，依次生成策略提示、执行模态私有残差适配和输出校准，以共享网络完成三类复原任务。</p>
+              <p><span class="label">负责内容：</span>作为第一作者，提出 MARR“决策—执行—校准”框架：融合输入强度、梯度、频域统计、模态标识及潜在内容路由提示池，以提示门控的 DWConv–GELU–PWConv 模态私有残差适配器细化解码特征，再用零初始化模态输出头校正 PET、CT 和 MRI 的强度与纹理偏差；复现 13 种方法并开展消融及机制诊断。</p>
+              <p class="outcome"><span class="label">所获成果：</span>目前 ICASSP 2027 在审中。</p>
+            </div>
+          </article>
+          <article class="research-item">
+            <div class="entry-head"><h3><a href="https://arxiv.org/abs/2609.06733" target="_blank" rel="noopener noreferrer">LASSNet：缺失模态脑肿瘤分割 ↗</a></h3><time class="entry-period">2026.03 - 2026.09</time></div>
+            <div class="research-copy">
+              <p><span class="label">研究内容：</span>针对临床脑肿瘤分割中 MRI 模态可能任意缺失、统一融合难以兼顾细节与语义的问题，本研究提出 LASSNet，使用 HACF 保留浅层空间信息，以 TriRSF 建模深层跨模态关系，再通过粗到细解码完成分割。</p>
+              <p><span class="label">负责内容：</span>作为第一作者，提出 LASSNet 层级感知方法：HACF 通过可用模态计数归一化、掩码条件通道调制和局部 3D 注意力稳定浅层细节；TriRSF 利用三尺度瓶颈金字塔、可用模态关系图及局部—全局建模增强语义互补，再经粗到细解码融合两路特征，并在 BraTS2019/2023 全部 15 种非空模态组合上完成验证。</p>
+              <p class="outcome"><span class="label">学术成果：</span>论文整理中。</p>
+            </div>
+          </article>
+          <article class="research-item">
+            <div class="entry-head"><h3><a href="https://www.biorxiv.org/content/early/2026/09/06/2026.09.02.748859" target="_blank" rel="noopener noreferrer">ReTIF：RNA–小分子相互作用与结合位点联合预测 ↗</a></h3><time class="entry-period">2025.12 - 2026.09</time></div>
+            <div class="research-copy">
+              <p><span class="label">研究内容：</span>针对 RNA 与小分子相互作用预测和核苷酸级结合位点定位粒度不同、共享表征容易互相干扰的问题，本研究提出 ReTIF 多任务框架，为两项任务分别构建交互张量，并用全局相互作用信号辅助局部位点识别。</p>
+              <p><span class="label">负责内容：</span>提出粒度感知多任务交互路由 ReTIF：融合 RNA-FM、structRFM、Mole-BERT 和 MolFormer 表征，在聚合前为 DTI 与结合位点任务构建独立交互张量；参与关系引导传播、DTI→BS 单向门控及弱分子先验正则的训练评测，验证未见 RNA、化合物及联合未见场景的泛化。</p>
+              <p class="outcome"><span class="label">所获成果：</span>AAAI 2027 二轮审稿中。</p>
+            </div>
+          </article>
+          <article class="research-item">
+            <div class="entry-head"><h3>LncPairMamba 与 LncBench：面向长链非编码 RNA 的配对引导基础模型与评测基准</h3><time class="entry-period">2026.09 - 至今</time></div>
+            <div class="research-copy">
+              <p><span class="label">研究内容：</span>针对长链非编码 RNA 预测中局部序列基序与远程碱基配对难以统一建模、现有模型缺乏一致评测的问题，本研究提出 LncPairMamba 结构引导基础模型，通过多尺度卷积、配对联合掩码与双向门控融合学习序列结构表示，并构建覆盖 15 个数据集的 LncBench 基准开展多任务评测。</p>
+              <p><span class="label">负责内容：</span>提出双向状态空间建模与配对状态门控融合机制，解决长链非编码 RNA 远距离依赖难以捕获、正反向序列信息难以有效协同的问题，实现局部基序与长程结构信息的联合表征；最终模型在 13 个适配数据集中有 11 项主指标取得最优结果。</p>
+              <p class="outcome"><span class="label">所获成果：</span>论文整理中。</p>
+            </div>
+          </article>
+          <article class="research-item">
+            <div class="entry-head"><h3>RNA-MEFlow：基于基序能量引导的 SE(3) 流匹配 RNA 三维结构生成方法</h3><time class="entry-period">2026.09 - 至今</time></div>
+            <div class="research-copy">
+              <p><span class="label">研究内容：</span>针对 RNA 三级结构生成中配对先验不足、原子几何监督偏弱的问题，构建双路径条件流模型，将 BPFold 能量图与配对概率注入 RNA 模块和 IPA，并联合五类结构损失，提高全局折叠、局部构象和原子合理性。</p>
+              <p><span class="label">负责内容：</span>提出 C1′ 框架驱动的全原子 RNA 生成方法，以九个扭转角重建 23 原子，解决骨架表示难以刻画碱基与糖环构象的问题；提出 BPFold 双路径条件机制，将能量偏置注入 RNA Transformer、校准配对权重注入 IPA，并联合五项结构损失，增强全局折叠、局部几何与原子合理性。</p>
+              <p class="outcome"><span class="label">所获成果：</span>论文整理中。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="section" id="publications">
+        <div class="section-heading"><h2>论文与学术成果</h2><p class="section-note">Publications &amp; Academic Outputs</p></div>
+        <div class="publication-list">
+          <article class="publication-item">
+            <h3><a href="https://www.biorxiv.org/content/10.1101/2025.08.06.668731v2" target="_blank" rel="noopener noreferrer">A fully open structure-guided RNA foundation model for robust structural and functional inference ↗</a></h3>
+            <p>陈浩斌（第四作者）｜链接为 bioRxiv 预印本</p>
+            <p class="publication-status">已被《Nature》正式接收</p>
+          </article>
+          <article class="publication-item">
+            <h3><a href="https://academic.oup.com/gpb/advance-article/doi/10.1093/gpbjnl/qzaf105/8321956" target="_blank" rel="noopener noreferrer">NeoAtlas and NeoBert: A Database and A Predictive Model for Canonical and Noncanonical Tumor Neoantigens ↗</a></h3>
+            <p>Meilong Shi, Qianyi Yan, Wei Zhao, Chuanqi Teng, Fengxian Han, <strong>Haobin Chen</strong>, et al.</p>
+            <p class="publication-status">Genomics, Proteomics &amp; Bioinformatics（GPB），2025｜第六作者</p>
+          </article>
+          <article class="publication-item">
+            <h3><a href="https://ieeexplore.ieee.org/document/10659937/" target="_blank" rel="noopener noreferrer">Research on Information Extraction of LCSTS Dataset Based on an Improved BERTSum-LSTM Model ↗</a></h3>
+            <p>Chen Y, <strong>Chen H</strong>, Liu S, et al.</p>
+            <p class="publication-status">IEEE ICMIII 2024｜第二作者</p>
+          </article>
+          <article class="publication-item">
+            <h3><a href="https://ieeexplore.ieee.org/document/10604250" target="_blank" rel="noopener noreferrer">Research on an Autonomous UAV Search and Rescue System Based on the Improved EGO-Planner Algorithm ↗</a></h3>
+            <p><strong>Chen H</strong>, J. Tao, B. Zhou and X. Liu</p>
+            <p class="publication-status">IEEE ICCEA 2024｜第一作者</p>
+          </article>
+        </div>
+      </section>
+      <section class="section" id="ip">
+        <div class="section-heading"><h2>知识产权</h2><p class="section-note">Intellectual Property</p></div>
+        <div class="publication-list">
+          <article class="ip-item">
+            <h3><a href="https://patents.google.com/patent/CN118107822A/zh" target="_blank" rel="noopener noreferrer">一种基于无人机的复杂环境搜救方法 ↗</a></h3>
+            <p>国家发明专利｜已受理｜第二发明人｜申请号：202410207396.0</p>
+          </article>
+          <article class="ip-item">
+            <h3>无人机自主飞行算法控制系统 V1.0</h3>
+            <p>计算机软件著作权｜共同著作权人（列第一位）｜登记号：2024SR1718737</p>
+          </article>
+        </div>
+      </section>
+      <section class="section" id="awards">
+        <div class="section-heading"><h2>竞赛奖项</h2><p class="section-note">18 项竞赛记录</p></div>
+        <ol class="awards">
+          <li><span class="award-title">WAIC世界人工智能大会生态赛——Amazon DeepRacer</span><span class="award-meta">国家级大学组特等奖（冠军），位次 1，2023.07</span></li>
+          <li><span class="award-title">中国机器人及人工智能大赛</span><span class="award-meta">国家级一等奖，位次 1，2023.06</span></li>
+          <li><span class="award-title">全球校园人工智能算法精英大赛</span><span class="award-meta">国家级一等奖，位次 1，2023.12</span></li>
+          <li><span class="award-title">国际青年人工智能大赛</span><span class="award-meta">国家级一等奖，位次 2，2023.11</span></li>
+          <li><span class="award-title">睿抗机器人开发者大赛</span><span class="award-meta">国家级一等奖，位次 5，2024.08</span></li>
+          <li><span class="award-title">全球校园人工智能算法精英大赛</span><span class="award-meta">国家级二等奖，位次 1，2023.12</span></li>
+          <li><span class="award-title">全国大学生机器人科技创新交流营暨机器人大赛</span><span class="award-meta">国家级二等奖，位次 1，2023.12</span></li>
+          <li><span class="award-title">中国机器人及人工智能大赛</span><span class="award-meta">国家级二等奖，位次 2，2022.08</span></li>
+          <li><span class="award-title">中国机器人大赛暨RoboCup机器人世界杯中国赛</span><span class="award-meta">国家级二等奖，位次 2，2022.11</span></li>
+          <li><span class="award-title">中国机器人及人工智能大赛</span><span class="award-meta">国家级二等奖，位次 2，2023.08</span></li>
+          <li><span class="award-title">睿抗机器人开发者大赛</span><span class="award-meta">国家级二等奖，位次 3，2023.09</span></li>
+          <li><span class="award-title">“中国软件杯”大学生软件设计大赛</span><span class="award-meta">国家级三等奖，位次 1，2023.08</span></li>
+          <li><span class="award-title">全球校园人工智能算法精英大赛</span><span class="award-meta">国家级三等奖，位次 1，2024.11</span></li>
+          <li><span class="award-title">全国大学生嵌入式芯片与系统设计竞赛</span><span class="award-meta">国家级三等奖，位次 2，2023.12</span></li>
+          <li><span class="award-title">睿抗机器人开发者大赛</span><span class="award-meta">国家级三等奖，位次 3，2024.08</span></li>
+          <li><span class="award-title">美国大学生数学建模竞赛（MCM/ICM）</span><span class="award-meta">国际级 Honorable Mention（荣誉奖），位次 1，2023.07</span></li>
+          <li><span class="award-title">抖音AI创变者计划（抖音小程序/Agent赛道）</span><span class="award-meta">国家级三等奖，位次 1，2025.09</span></li>
+          <li><span class="award-title">Stanford RNA 3D Folding Part 2（Kaggle）</span><span class="award-meta">国际级 最终第38/1829名（Top 2.08%），个人参赛，2026.03</span></li>
+        </ol>
+      </section>
+      <section class="section" id="honors">
+        <div class="section-heading"><h2>荣誉和学生工作</h2><p class="section-note">Honors &amp; Leadership</p></div>
+        <div class="honor-list">
+          <article class="honor-item"><h3>东华大学 NITORI 国际奖学金</h3><time>2021 - 2022</time></article>
+          <article class="honor-item"><h3>东华大学五四表彰“优秀团员”荣誉称号</h3><time>2021 - 2022</time></article>
+          <article class="honor-item"><h3>东华大学同祺奖学金</h3><time>2022 - 2023</time></article>
+          <article class="honor-item"><h3>东华大学信息学院人工智能创新实验室社长</h3><time>2023 - 2024</time></article>
+          <article class="honor-item"><h3>东华大学优秀毕业生</h3><time>2021-2025</time></article>
+          <article class="honor-item"><h3>中国科学技术大学一等奖学金</h3><time>2025 - 2026</time></article>
+        </div>
+      </section>
+      <section class="section" id="contact">
+        <div class="section-heading"><h2>联系我</h2><p class="section-note">Contact</p></div>
+        <div class="contact-grid">
+          <div class="contact-copy">
+            <p>欢迎就大语言模型、表征学习、RNA 结构预测及相关研究进行交流。</p>
+            <p>邮箱：<a href="mailto:aleck@mail.ustc.edu.cn">aleck@mail.ustc.edu.cn</a></p>
+            <p>更多动态可通过页面顶部的 GitHub、Google Scholar、CSDN 与 Bilibili 查看。</p>
+          </div>
+          <figure class="qr-card">
+            <img src="wechat_qr.png" alt="陈浩斌的微信二维码" width="1188" height="1569">
+            <figcaption>微信：Aleck</figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+    <footer><p>最后更新：2026 年 10 月</p></footer>
   </div>
-
-  <div class="intro">
-    <p>🤖 M.S. student in Electronic Information at <a href="https://www.ustc.edu.cn/">University of Science and Technology of China</a> (2025–present)</p>
-    <p>🎓 B.E. in Artificial Intelligence at <a href="https://www.dhu.edu.cn/">Donghua University</a> (2021–2025)</p>
-    <p style="margin-top: 10px;">🔥 Passionate about LLM, Representation Learning, and RNA Structure Prediction</p>
-    <p style="margin-top: 10px;">📬 Reach me at: <a href="mailto:aleck@mail.ustc.edu.cn">aleck@mail.ustc.edu.cn</a></p>
-  </div>
-
-  <h2>📚 Publications</h2>
-  <ul class="paper-list">
-    <li><a href="https://academic.oup.com/gpb/advance-article/doi/10.1093/gpbjnl/qzaf105/8321956" style="color:#0066cc;text-decoration:none;"><strong>NeoAtlas and NeoBert:</strong> A Database and A Predictive Model for Canonical and Noncanonical Tumor Neoantigens</a><br>
-      <span style="color:#666;">Meilong Shi, Qianyi Yan, Wei Zhao, Chuanqi Teng, Fengxian Han, <strong>Haobin Chen</strong>, et al.</span><br>
-      <span style="color:#888;">Genomics, Proteomics & Bioinformatics (GPB) 2025</span></li>
-    <li><a href="https://ieeexplore.ieee.org/document/10659937/" style="color:#0066cc;text-decoration:none;"><strong>Research on Information Extraction of LCSTS Dataset Based on an Improved BERTSum-LSTM Model</strong></a><br>
-      <span style="color:#666;">Chen Y, <strong>Chen H</strong>, Liu S, et al.</span><br>
-      <span style="color:#888;">2nd International Conference on Mechatronics, IoT and Industrial Informatics (ICMIII 2024)</span></li>
-    <li><a href="https://ieeexplore.ieee.org/document/10604250" style="color:#0066cc;text-decoration:none;"><strong>Research on an Autonomous UAV Search and Rescue System Based on the Improved EGO-Planner Algorithm</strong></a><br>
-      <span style="color:#666;"><strong>Chen H</strong>, J. Tao, B. Zhou and X. Liu</span><br>
-      <span style="color:#888;">5th International Conference on Computer Engineering and Application (ICCEA 2024)</span></li>
-  </ul>
-
-  <h2>🏆 Awards</h2>
-  <ul class="award-list">
-    <li><span class="award">🥇</span> 2025 ByteDance AI Creator Challenge - 3rd Prize (Final)</li>
-    <li><span class="award">🥇</span> 2024 RAICOM - Algorithm Optimization - National 1st Prize</li>
-    <li><span class="award">🥇</span> 2023 China Robot and AI Competition - Innovation - National 1st Prize</li>
-    <li><span class="award">🏆</span> 2023 WAIC Amazon DeepRacer - University Championship</li>
-    <li><span class="award">🥇</span> 2023 Global AI Algorithm Elite Competition - Road Damage Detection - National 1st Prize</li>
-    <li><span class="award">🥇</span> 2023 5th International Youth AI Competition - National 1st Prize</li>
-    <li><span class="award">🥈</span> 2022 China Robot and AI Competition - Baidu Apollo - National 2nd Prize</li>
-    <li><span class="award">🥉</span> 2023 MathorCup Mathematical Contest in Modeling - H Prize</li>
-    <li><span class="award">🥉</span> 2023 China Software Cup - National 3rd Prize</li>
-    <li><span class="award">🥉</span> 2023 National College Embedded Chip & System Design Competition (FPGA) - National 3rd Prize</li>
-    <li><span class="award">🥉</span> 2024 RAICOM - Quadruped Robot - National 3rd Prize</li>
-    <li><span class="award">🥉</span> 2024 China International College Student Innovation Competition - Shanghai Bronze</li>
-  </ul>
-
-  <h2>📄 Patents & Software</h2>
-  <ul>
-    <li>🛩️ "<a href="https://patents.google.com/patent/CN118107822A/zh" style="color:#0066cc;text-decoration:none;">A UAV-based Complex Environment Search and Rescue Method</a>" - Patent</li>
-    <li>💾 "<a href="https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=2KiDPfQAAAAJ&citation_for_view=2KiDPfQAAAAJ:d1gkVwhDpl0C" style="color:#0066cc;text-decoration:none;">Swarm Rescue Autonomous UAV Management System V1.0</a>" - Software Copyright</li>
-  </ul>
-
-  <h2>🔗 Links</h2>
-  <ul>
-    <li><img src="https://raw.githubusercontent.com/CHB-learner/CHB-learner.github.io/main/wechat_qr.png" alt="WeChat QR Code" style="width:150px;border-radius:8px;">
-  </ul>
-
-  <p class="last-updated">Last Updated: May 2026</p>
 </body>
 </html>
